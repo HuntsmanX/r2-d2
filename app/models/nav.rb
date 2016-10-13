@@ -84,7 +84,7 @@ class Nav
           klass:  NcUser
         }, {
           name:   'Namecheap Domains',
-          url:    '/nc_domains',
+          url:    '#/legal/nc_domains',
           icon:   'fa fa-fw',
           klass:  NcService
         }, {

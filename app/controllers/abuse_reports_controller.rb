@@ -23,7 +23,7 @@ class AbuseReportsController < ApplicationController
       redirect_to action: :index
     else
       flash.now[:alert] = 'Unable to submit abuse report: ' + @abuse_report_form.errors.full_messages.join('; ')
-      render action: :new
+      render action: :list
     end
   end
   

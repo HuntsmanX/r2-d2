@@ -1,0 +1,34 @@
+.row
+  .large-5.columns
+    .row.hash
+      .key Name
+      .value = @name
+    .row.hash
+      .key Current Status
+      .value = @status?.join(',\n')
+  
+  .large-3.columns
+    .row.hash
+      .key Email
+      .value = @email
+    .row.hash
+      .key Comments
+      .value = @comment
+        
+      
+  .large-3.columns
+    .row.hash
+      .key Added at
+      .value = @created_at_formatted
+    .row.hash
+      .key Last Updated at
+      .value = @updated_at_formatted
+      
+  .large-1.columns
+    .row
+      .large-12.columns
+        .button-group.tiny.float-right
+          - if @canDestroy
+            a.button.alert.delete-domain
+              icon.fi-x
+              |  Delete

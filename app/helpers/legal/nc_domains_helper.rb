@@ -1,0 +1,2 @@
+module Legal::NcDomainsHelper
+end
