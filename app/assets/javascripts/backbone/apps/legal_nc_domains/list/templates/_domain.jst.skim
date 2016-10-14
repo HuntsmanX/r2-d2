@@ -1,34 +1,27 @@
 .row
-  .large-5.columns
-    .row.hash
-      .key Name
-      .value = @name
-    .row.hash
-      .key Current Status
-      .value = @status?.join(',\n')
-  
   .large-3.columns
     .row.hash
-      .key Email
-      .value = @email
+      .key Domain name
+      .value = @name
+  
+  .large-2.columns
     .row.hash
-      .key Comments
-      .value = @comment
+      .key Namecheap user
+      .value = @nc_user_id
         
       
-  .large-3.columns
+  .large-2.columns
     .row.hash
-      .key Added at
-      .value = @created_at_formatted
-    .row.hash
-      .key Last Updated at
-      .value = @updated_at_formatted
+      .key Abuse Reports
+      .value = @nc_service_type_id
+
+  .large-2.columns
+      .row.hash
+        .key Status
+        .value = @status_ids
       
   .large-1.columns
-    .row
-      .large-12.columns
-        .button-group.tiny.float-right
-          - if @canDestroy
-            a.button.alert.delete-domain
-              icon.fi-x
-              |  Delete
+      .button-group.tiny.float-right
+        a.button.primary.show-report
+          icon.fi-magnifying-glass
+          |  Show

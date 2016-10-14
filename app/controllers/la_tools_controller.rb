@@ -11,7 +11,7 @@ class LaToolsController < ApplicationController
     @domains = DomainName.parse_multiple params[:text].downcase, remove_subdomains: true
     BackgroundJob.where(user_id: current_user.id, status: "Insufficient data").delete_all
     current_user.background_jobs.create status: "Insufficient data", info: "CSV file has not been uploaded", data: DomainName.multiple_to_hash(@domains)
-    render action: :list
+    render action: :new
   end
 
   # Legal & Abuse > Spam, submit the form with CSV

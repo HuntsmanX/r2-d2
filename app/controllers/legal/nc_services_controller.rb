@@ -5,7 +5,7 @@ class Legal::NcServicesController < ApplicationController
   def index
     @search = NcService.ransack params[:q]
     @per_page = params[:per_page].blank? ? 25 : params[:per_page]
-    @services = @search.result(distinct: true).where(nc_service_type_id: service_type_id).paginate(page: params[:page], per_page: @per_page).to_json
+    @services = @search.result(distinct: true).where(nc_service_type_id: service_type_id).paginate(page: params[:page], per_page: @per_page)
   end
 
   def create

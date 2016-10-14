@@ -1,4 +1,3 @@
-- console.log @
 legend = @description
 input type='hidden' name="permission_ids[]" value='' syphon='visible'
 

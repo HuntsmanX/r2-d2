@@ -16,8 +16,8 @@
     panelRegion: (domains) ->
       panelView = @getPanelView()
   
-      @listenTo panelView, 'new:watched:domain:clicked', (args) ->
-        App.vent.trigger 'new:watched:domain:clicked', domains
+      @listenTo panelView, 'new:nc:domain:clicked', (args) ->
+        App.vent.trigger 'new:nc:domain:clicked', domains
   
       @show panelView, region: @layout.panelRegion
   
@@ -34,10 +34,6 @@
   
     domainsRegion: (domains) ->
       domainsView = @getDomainsView domains
-  
-      @listenTo domainsView, 'childview:delete:clicked', (child, args) ->
-        model = args.model
-        if confirm "Are you sure you want to delete #{model.get("name")}?" then model.destroy() else false
   
       @show domainsView,
         loading: true

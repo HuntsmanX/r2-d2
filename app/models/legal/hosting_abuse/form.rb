@@ -171,7 +171,7 @@ class Legal::HostingAbuse::Form
   private
   
   def child_form
-    @child_form ||= get_child_form.try(:list)
+    @child_form ||= get_child_form.try(:new)
   end
   
   def get_child_form

@@ -18,6 +18,13 @@
         region:  App.modalRegion
         domains: domains
 
+    show: (id, region) ->
+      return App.execute 'legal:list', 'Namecheap Domains', { action: 'show', id: id } if not region
+
+      new LegalNcDomainsApp.Show.Controller
+        region: region
+        id:     id
+
 
   App.vent.on 'legal:nav:selected', (nav, options, region) ->
     return if nav isnt 'Namecheap Domains'
@@ -30,7 +37,8 @@
       API.list region
 
 
-  App.vent.on 'new:watched:domain:clicked', (domains) ->
+  App.vent.on 'new:nc:domain:clicked', (domains) ->
+    debugger
     API.newDomain domains
 
 

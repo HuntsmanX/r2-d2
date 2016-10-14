@@ -14,7 +14,7 @@
     template: 'legal_nc_domains/list/panel'
 
     triggers:
-      'click a' : 'new:watched:domain:clicked'
+      'click a' : 'new:nc:domain:clicked'
 
     serializeData: ->
       canCreate: App.ability.can 'create', 'NcService'
@@ -60,30 +60,9 @@
 
     tagName: 'li'
 
-    triggers:
-      'click .delete-domain' : 'delete:clicked'
-
-    serializeData: ->
-      data = super
-      data.canDestroy = App.ability.can 'destroy', @model
-      data
-
 
   class List.DomainsView extends App.Views.CompositeView
     template: 'legal_nc_domains/list/domains'
 
     childView:          List.DomainView
     childViewContainer: 'ul'
-
-    collectionEvents:
-      'collection:sync:start' : 'syncStart'
-      'collection:sync:stop'  : 'syncStop'
-
-    syncStart: ->
-      @addOpacityWrapper()
-
-    syncStop: ->
-      @addOpacityWrapper false
-
-    onDestroy: ->
-      @addOpacityWrapper false

@@ -26,5 +26,5 @@
   App.reqres.setHandler 'watched:nc:domain:entities', ->
     API.getWatchedNcDomainsCollection()
 
-  App.reqres.setHandler 'new:watched:nc:domain:entity', ->
+  App.reqres.setHandler 'new:nc:service:entity', ->
     API.getNewWatchedNcDomain()
