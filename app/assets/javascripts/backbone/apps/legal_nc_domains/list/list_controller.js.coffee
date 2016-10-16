@@ -34,7 +34,10 @@
   
     domainsRegion: (domains) ->
       domainsView = @getDomainsView domains
-  
+
+      @listenTo domainsView, 'childview:show:nc:domain:clicked', (args) ->
+        App.vent.trigger 'show:nc:domain:clicked', args.model
+
       @show domainsView,
         loading: true
         region:  @layout.domainsRegion

@@ -22,6 +22,6 @@
       
   .large-1.columns
       .button-group.tiny.float-right
-        a.button.primary.show-report
+        a.button.primary.show-domain
           icon.fi-magnifying-glass
           |  Show

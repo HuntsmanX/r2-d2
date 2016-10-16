@@ -22,9 +22,16 @@
     getNewWatchedNcDomain: ->
       new Entities.NcDomain
 
+    getNcDomain: (id) ->
+      domains = new Entities.NcDomain id: id
+      domains.fetch()
+      domains  
 
   App.reqres.setHandler 'watched:nc:domain:entities', ->
     API.getWatchedNcDomainsCollection()
 
   App.reqres.setHandler 'new:nc:service:entity', ->
     API.getNewWatchedNcDomain()
+
+  App.reqres.setHandler 'nc:domain:entity', (id) ->
+    API.getNcDomain id  

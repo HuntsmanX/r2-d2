@@ -59,6 +59,9 @@
     template: 'legal_nc_domains/list/_domain'
 
     tagName: 'li'
+    
+    triggers:
+      'click .show-domain' : 'show:nc:domain:clicked'
 
 
   class List.DomainsView extends App.Views.CompositeView

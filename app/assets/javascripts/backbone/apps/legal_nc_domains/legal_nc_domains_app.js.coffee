@@ -3,7 +3,8 @@
   class LegalNcDomainsApp.Router extends App.Routers.Base
 
     appRoutes:
-      'legal/nc_domains' : 'list'
+      'legal/nc_domains'     : 'list'
+      'legal/nc_domains/:id' : 'show'
 
   API =
 
@@ -19,6 +20,7 @@
         domains: domains
 
     show: (id, region) ->
+      debugger
       return App.execute 'legal:list', 'Namecheap Domains', { action: 'show', id: id } if not region
 
       new LegalNcDomainsApp.Show.Controller
@@ -36,10 +38,18 @@
       App.navigate 'legal/nc_domains'
       API.list region
 
+    if action is 'show'
+      debugger
+      App.navigate "legal/nc_domains/#{options.id}"
+      API.show options.id, region
 
   App.vent.on 'new:nc:domain:clicked', (domains) ->
     debugger
     API.newDomain domains
+
+  App.vent.on 'show:nc:domain:clicked', (domains) ->
+    debugger
+    API.show domains.id
 
 
   LegalNcDomainsApp.on 'start', ->
