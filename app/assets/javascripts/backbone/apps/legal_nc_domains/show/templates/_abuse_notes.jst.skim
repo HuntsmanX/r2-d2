@@ -1,0 +1,20 @@
+.large-12.columns
+  fieldset
+    legend Abuse Report
+    .row.large-up-4
+
+      .column: .row.hash
+        .key Domains
+        .value = @nc_services
+
+      .column: .row.hash
+        .key Action
+        .value = @additional_action
+
+      .column: .row.hash
+        .key Reported by
+        .value = @abuse_reported_by
+
+      .column: .row.hash
+        .key Additional comments
+        .value = @comment

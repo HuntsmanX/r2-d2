@@ -47,10 +47,6 @@
           label:    'Has Status'
           tagName:  'select'
           options:  @getStatus()
-        ,
-          name:     'count'
-          label:    'Entries per page'
-          default:  '25'
         ]
       ]
     getStatus: -> App.entities.legal.service_status

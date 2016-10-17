@@ -1,12 +1,1 @@
-.table-scroll
-  table
-    thead
-      tr
-        th Type
-        th Reported by
-        th Processed?
-        th Actions
-    tbody
-        tr
-          td = @name
-          td = @id
+ul.no-bullet.hosting-abuse-list

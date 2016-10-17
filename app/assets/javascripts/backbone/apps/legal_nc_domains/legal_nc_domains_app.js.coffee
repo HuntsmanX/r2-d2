@@ -20,7 +20,6 @@
         domains: domains
 
     show: (id, region) ->
-      debugger
       return App.execute 'legal:list', 'Namecheap Domains', { action: 'show', id: id } if not region
 
       new LegalNcDomainsApp.Show.Controller
@@ -39,16 +38,13 @@
       API.list region
 
     if action is 'show'
-      debugger
       App.navigate "legal/nc_domains/#{options.id}"
       API.show options.id, region
 
   App.vent.on 'new:nc:domain:clicked', (domains) ->
-    debugger
     API.newDomain domains
 
   App.vent.on 'show:nc:domain:clicked', (domains) ->
-    debugger
     API.show domains.id
 
 

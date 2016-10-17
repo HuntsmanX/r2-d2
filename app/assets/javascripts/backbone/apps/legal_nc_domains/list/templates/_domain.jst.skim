@@ -18,7 +18,7 @@
   .large-2.columns
       .row.hash
         .key Status
-        .value = @status_ids
+        .value == @images
       
   .large-1.columns
       .button-group.tiny.float-right

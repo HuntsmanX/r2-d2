@@ -67,7 +67,7 @@ Rails.application.routes.draw do
     end
 
     resources :dbl_surbl_checks, only: [:create]
-    resources :nc_services, as: 'nc_domains', path: '/legal/nc_domains', controller: 'nc_domains'
+    resources :nc_services, as: 'nc_domains', path: 'nc_domains', controller: 'nc_domains'
   end
 
   namespace :domains do
