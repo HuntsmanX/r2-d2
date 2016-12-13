@@ -82,6 +82,10 @@ gem 'active_model_serializers'
 
 gem 'google_drive'
 
+gem 'pry'
+gem 'nokogiri'
+gem 'rest-client'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
