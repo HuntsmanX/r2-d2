@@ -22,3 +22,7 @@
 every 1.day, at: '1:30 am' do
   rake "domains:update_domain_names"
 end
+
+every 1.day, at: '12:00 am' do
+  rake "create_email:parse_and_send"
+end

@@ -65,6 +65,7 @@ gem 'roo'
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary'
 gem 'combine_pdf'
+gem 'letter_opener'
 
 gem 'gon'
 gem 'rabl-rails'
