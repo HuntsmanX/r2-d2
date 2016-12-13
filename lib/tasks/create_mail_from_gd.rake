@@ -6,10 +6,6 @@ namespace :create_email do
     rows = doc.worksheets[0].rows
 
     rows_need = rows.drop(1).map { |r| r if r[0].present? && Date.strptime(r[0], "%m/%d/%Y").today? }.compact
-
-    rows_need.each do |row|
-      TaskMailer.performance_issues_tracking(row).deliver
-    end
+    TaskMailer.performance_issues_tracking(rows_need).deliver
   end
-
 end

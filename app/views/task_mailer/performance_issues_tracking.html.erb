@@ -1,24 +1,26 @@
 Hello,
 
 <p>
-This is checkout and website performance issues tracking report for <%= Date.strptime(@timestamp, "%m/%d/%Y").to_date.strftime('%b %Y') %>:
+This is checkout and website performance issues tracking report for <%= Date.today.strftime('%d %b') %>:
 </p>
 
-<b><%= @timestamp %></b></br>
-<% if @who_affected.include? 'outage' %>
-<%= @who_affected %></br>
+<% @rows.each do |row| %>
+    <b><%= row[0] %></b></br>
+    <% if row[3].include? 'outage' %>
+        <%= row[3] %></br>
+    <% end %>
+
+
+    <%= row[4] %></br>
+    <%= row[5] %></br>
+    <%= row[6] %>
+
+    <p><%= row[7] %></p>
+
+    <p>
+      ********************
+    </p>
 <% end %>
-
-
-<%= @what_affected %></br>
-<%= @issue_type %></br>
-<%= @reference %>
-
-<p><%= @description %></p>
-
-<p>
-  ********************
-</p>
 
 You can view full report here: <a href="<%= Rails.application.secrets.link_for_report %>" target="_blank"><%= Rails.application.secrets.link_for_report %></a>
 <br>
