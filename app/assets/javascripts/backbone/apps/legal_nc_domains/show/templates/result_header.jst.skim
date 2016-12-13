@@ -1,0 +1,25 @@
+.large-2.columns
+  .row.hash
+    .key: span Type
+    .value: span = @abuse_report_type_id
+.large-3.columns
+  .row.hash
+    .key: span Reported by
+    .value: span = @reported_by
+.large-3.columns
+  .row.hash
+    .key: span Reported on
+    .value: span = @created_at
+.large-2.columns
+  .row.hash
+    .key: span Processed?
+    .value: span = @proceedReport
+.row
+    .large-12.columns.text-right
+      a.toggle
+        icon.fa.fa-angle-double-down.expand-toggle
+
+.row.expand style="display:none"
+  .additional
+
+

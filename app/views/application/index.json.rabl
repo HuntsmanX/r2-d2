@@ -49,7 +49,8 @@ node :entities do
         reported_by:     Legal::HostingAbuse.reported_by.as_json(only: [:id, :name]),
         processed_by:    Legal::HostingAbuse.processed_by.as_json(only: [:id, :name])
       },
-      rbl_status: Legal::RblStatus.all.as_json(only: [:id, :name])
+      rbl_status:     Legal::RblStatus.all.as_json(only: [:id, :name]),
+      service_status: ServiceStatus.all.as_json(only: [:id, :name])
     },
     domains: {
       compensation: {

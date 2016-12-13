@@ -1,0 +1,61 @@
+.large-12.columns
+  fieldset
+    legend DNS DDoS Report
+    .row.large-up-10
+
+      .column: .row.hash
+        .key Service under attack:
+        .value = @ddos_info.target_service
+
+      .column: .row.hash
+        .key Severity of impact:
+        .value = @ddos_info.impact
+
+      .column: .row.hash
+        .key Sign up date:
+        .value = @nc_users_direct_first_signed
+
+      .column: .row.hash
+        .key Last login date:
+        .value = @ddos_info.last_signed_in_on
+
+      .column: .row.hash
+        .key Amount spent:
+        .value = @ddos_info.amount_spent
+
+      .column: .row.hash
+        .key Additional comments:
+        .value = @comment
+
+      .column: .row.hash
+        .key Registered domains:
+        .value = @ddos_info.registered_domains
+
+      .column: .row.hash
+        .key FreeDNS domains:
+        .value = @ddos_info.free_dns_domains
+
+      .column: .row.hash
+        .key Domains under attack:
+        .value = @domains_under_attack
+
+      .column: .row.hash
+        .key Randomly generated:
+        .value = @ddos_info.registered_domains.nil? ? "" : (@ddos_info.registered_domains ? 'Yes' : 'No')
+
+      .column: .row.hash
+        .key CFC status:
+        - cfc = if @ddos_info.cfc_status then 'Yes' else 'No'
+        .value = cfc
+
+      .column: .row.hash
+        .key CFC comment:
+        .value = @ddos_info.cfc_comment
+
+      .column: .row.hash
+        .key Ticket to customer:
+        .value = @ddos_info.client_ticket_id
+
+      .column: .row.hash
+        .key Ticket(s) to service provider(s):
+        .value = @ddos_info.vendor_ticket_id

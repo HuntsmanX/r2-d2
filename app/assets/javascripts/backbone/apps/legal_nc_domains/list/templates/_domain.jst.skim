@@ -1,0 +1,27 @@
+.row
+  .large-3.columns
+    .row.hash
+      .key Domain name
+      .value = @name
+  
+  .large-2.columns
+    .row.hash
+      .key Namecheap user
+      .value = @nc_user_id
+        
+      
+  .large-2.columns
+    .row.hash
+      .key Abuse Reports
+      .value = @nc_service_type_id
+
+  .large-2.columns
+      .row.hash
+        .key Status
+        .value == @images
+      
+  .large-1.columns
+      .button-group.tiny.float-right
+        a.button.primary.show-domain
+          icon.fi-magnifying-glass
+          |  Show

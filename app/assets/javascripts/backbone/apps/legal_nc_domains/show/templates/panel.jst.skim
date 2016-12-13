@@ -1,0 +1,6 @@
+.clearfix
+  h4.float-left Abuse Reports
+  - if @canCreate
+    a.button.small.float-right
+      icon.fi-plus
+      |  New Report

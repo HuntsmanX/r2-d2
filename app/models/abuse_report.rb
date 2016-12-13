@@ -45,5 +45,21 @@ class AbuseReport < ActiveRecord::Base
   def related_reports
     self.nc_users.map(&:abuse_reports).flatten.uniq
   end
-  
+
+	def additional_action
+    self.abuse_notes_info.try(:action)
+  end
+
+	def abuse_reported_by
+    self.abuse_notes_info.try(:reported_by)
+  end
+
+	def nc_users_direct_first_signed
+    self.nc_users.try(:direct).try(:first).try(:signed_up_on).try(:strftime, "%d %B %Y")
+  end
+
+	def domains_under_attack
+    self.nc_services.map(&:name).join(", ")
+  end
+
 end
